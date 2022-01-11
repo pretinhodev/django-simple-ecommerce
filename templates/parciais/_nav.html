@@ -1,7 +1,7 @@
 {% load omfilters %}
 
 <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
-    <a class="navbar-brand" href="{% url 'produto:lista' %}">E-commerce</a>
+    <a class="navbar-brand" href="{% url 'produto:lista' %}">ecommerce</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,20 +13,20 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
-                    Conta
+                    conta
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'pedido:lista' %}">Meus pedidos</a>
-                    <a class="dropdown-item" href="{% url 'perfil:criar' %}">Atualizar meus dados</a>
-                    <a class="dropdown-item" href="{% url 'perfil:logout' %}">Sair</a>
+                    <a class="dropdown-item" href="{% url 'pedido:lista' %}">meus pedidos</a>
+                    <a class="dropdown-item" href="{% url 'perfil:criar' %}">atualizar meus dados</a>
+                    <a class="dropdown-item" href="{% url 'perfil:logout' %}">sair</a>
                 </div>
             </li>
             {% else %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'perfil:criar' %}">Entrar</a>
+                <a class="nav-link" href="{% url 'perfil:criar' %}">entrar</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'perfil:criar' %}">Criar conta</a>
+                <a class="nav-link" href="{% url 'perfil:criar' %}">criar conta</a>
             </li>
             {% endif %}
 
@@ -34,7 +34,7 @@
             <li class="nav-item">
                 <a class="nav-link nav-cart-link active" href="{% url 'produto:carrinho' %}">
                     <span class="nav-cart-text mr-1">
-                        Carrinho
+                        carrinho
                     </span>
                     <span class="nav-cart-count mr-1">
                         <strong>{{ request.session.carrinho|cart_total_qtd }}x</strong>
@@ -51,7 +51,7 @@
         <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'produto:busca' %}">
             <input name="termo" value="{{ request.GET.termo }}" class="form-control mr-sm-2" type="search"
                 placeholder="Busca" aria-label="Busca">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Busca</button>
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">busca</button>
         </form>
     </div>
 </nav>

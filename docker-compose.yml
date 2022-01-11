@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    container_name: loja_db
+    image: library/postgres:9.4.17
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5435:5432"
+    networks:
+      - db-network
+      
+  pgadmin:
+    container_name: loja_pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+    networks:
+      - db-network
+
+networks: 
+  db-network:
+    driver: bridge

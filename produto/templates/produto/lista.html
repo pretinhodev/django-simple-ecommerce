@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load omfilters %}
 
-{% block titulo %}Produtos | {% endblock %}
+{% block titulo %}produtos | {% endblock %}
 
 {% block conteudo %}
 
@@ -42,7 +42,7 @@
                 <div class="card-footer bg-transparent border-top-light-custom text-center">
                     <a href="{% url 'produto:detalhe' produto.slug %}" class="btn btn-primary btn-sm m-1 btn-block">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        Comprar
+                        comprar
                     </a>
                 </div>
             </div>
